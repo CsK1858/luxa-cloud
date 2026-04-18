@@ -4,7 +4,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { LuxaLogo } from '@/components/ui/logo';
 import { LanguageSwitcher } from '@/components/ui/language-switcher';
 import Link from 'next/link';
-import { Download, ArrowLeft, Package, Cpu, Usb, Terminal, Shield, Zap, ChevronDown, ChevronUp } from 'lucide-react';
+import { Download, ArrowLeft, Shield, Zap, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
 
 export default function FirmwarePage() {
@@ -99,32 +99,6 @@ export default function FirmwarePage() {
           </div>
         )}
 
-        {/* Requirements */}
-        <div className="bg-luxa-bg-card border border-luxa-border rounded-xl p-6">
-          <h2 className="text-lg font-semibold text-luxa-text mb-4">{t('requirements')}</h2>
-          <div className="space-y-3">
-            <ReqItem icon={<Cpu size={16} />} text={t('req1')} />
-            <ReqItem icon={<Package size={16} />} text={t('req2')} />
-            <ReqItem icon={<Usb size={16} />} text={t('req3')} />
-            <ReqItem icon={<Terminal size={16} />} text={t('req4')} />
-          </div>
-        </div>
-
-        {/* Flash Guide */}
-        <div className="bg-luxa-bg-card border border-luxa-border rounded-xl p-6">
-          <h2 className="text-lg font-semibold text-luxa-text mb-4">{t('flashGuide')}</h2>
-          <div className="space-y-3 text-sm">
-            <StepItem n="1" text={t('flashStep1')} />
-            <StepItem n="2" text={t('flashStep2')} />
-            <StepItem n="3" text={t('flashStep3')} />
-            <StepItem n="4" text={t('flashStep4')} />
-          </div>
-          <div className="mt-4 p-3 bg-luxa-bg rounded-lg border border-luxa-border">
-            <code className="text-xs text-luxa-gold font-mono">pio run -t upload</code>
-          </div>
-          <p className="text-xs text-luxa-muted mt-3">{t('otaNote')}</p>
-        </div>
-
         <div className="text-center">
           <Link href={`/${locale}/setup`} className="text-luxa-gold text-sm hover:underline">{tNav('setup')} →</Link>
         </div>
@@ -147,20 +121,3 @@ function ChangeCategory({ icon, label, items }: { icon: React.ReactNode; label: 
   );
 }
 
-function ReqItem({ icon, text }: { icon: React.ReactNode; text: string }) {
-  return (
-    <div className="flex items-center gap-3 text-sm">
-      <span className="text-luxa-gold">{icon}</span>
-      <span className="text-luxa-text">{text}</span>
-    </div>
-  );
-}
-
-function StepItem({ n, text }: { n: string; text: string }) {
-  return (
-    <div className="flex items-start gap-3">
-      <span className="w-6 h-6 rounded-full bg-luxa-gold/10 text-luxa-gold text-xs flex items-center justify-center shrink-0 mt-0.5">{n}</span>
-      <span className="text-luxa-text">{text}</span>
-    </div>
-  );
-}
