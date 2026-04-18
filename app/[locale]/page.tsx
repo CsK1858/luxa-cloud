@@ -2,8 +2,9 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import { LuxaLogo } from '@/components/ui/logo';
+import { LanguageSwitcher } from '@/components/ui/language-switcher';
 import Link from 'next/link';
-import { Wifi, Radio, Clock, Home } from 'lucide-react';
+import { Wifi, Radio, Clock, Home, ArrowLeft } from 'lucide-react';
 
 export default function LandingPage() {
   const t = useTranslations('landing');
@@ -24,13 +25,17 @@ export default function LandingPage() {
       <nav className="border-b border-luxa-border bg-luxa-bg/80 backdrop-blur-xl sticky top-0 z-50">
         <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
+            <a href="https://luxasystem.com" className="text-luxa-muted hover:text-luxa-text transition" title="luxasystem.com">
+              <ArrowLeft size={20} />
+            </a>
             <LuxaLogo size={32} />
             <span className="text-luxa-gold font-bold tracking-wider text-lg">LUXA</span>
           </div>
-          <div className="flex items-center gap-2">
-            <Link href={`/${locale}/firmware`} className="px-3 py-2 text-sm text-luxa-muted hover:text-luxa-text transition">{tNav('firmware')}</Link>
-            <Link href={`/${locale}/setup`} className="px-3 py-2 text-sm text-luxa-muted hover:text-luxa-text transition">{tNav('setup')}</Link>
+          <div className="flex items-center gap-3">
+            <Link href={`/${locale}/firmware`} className="px-3 py-2 text-sm text-luxa-muted hover:text-luxa-text transition hidden sm:block">{tNav('firmware')}</Link>
+            <Link href={`/${locale}/setup`} className="px-3 py-2 text-sm text-luxa-muted hover:text-luxa-text transition hidden sm:block">{tNav('setup')}</Link>
             <Link href={`/${locale}/login`} className="px-4 py-2 bg-luxa-gold text-luxa-bg text-sm font-semibold rounded-lg hover:bg-luxa-gold-light transition">{t('ctaDashboard')}</Link>
+            <LanguageSwitcher />
           </div>
         </div>
       </nav>

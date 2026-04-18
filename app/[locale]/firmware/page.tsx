@@ -2,6 +2,7 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import { LuxaLogo } from '@/components/ui/logo';
+import { LanguageSwitcher } from '@/components/ui/language-switcher';
 import Link from 'next/link';
 import { Download, ArrowLeft, Package, Cpu, Usb, Terminal } from 'lucide-react';
 
@@ -13,10 +14,13 @@ export default function FirmwarePage() {
   return (
     <div className="min-h-screen">
       <nav className="border-b border-luxa-border bg-luxa-bg/80 backdrop-blur-xl sticky top-0 z-50">
-        <div className="max-w-3xl mx-auto px-4 h-16 flex items-center gap-3">
-          <Link href={`/${locale}`} className="text-luxa-muted hover:text-luxa-text transition"><ArrowLeft size={20} /></Link>
-          <LuxaLogo size={28} />
-          <span className="text-luxa-gold font-bold tracking-wider">LUXA</span>
+        <div className="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Link href={`/${locale}`} className="text-luxa-muted hover:text-luxa-text transition"><ArrowLeft size={20} /></Link>
+            <LuxaLogo size={28} />
+            <span className="text-luxa-gold font-bold tracking-wider">LUXA</span>
+          </div>
+          <LanguageSwitcher />
         </div>
       </nav>
 
