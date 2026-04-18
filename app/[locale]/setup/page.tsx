@@ -4,7 +4,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { LuxaLogo } from '@/components/ui/logo';
 import { LanguageSwitcher } from '@/components/ui/language-switcher';
 import Link from 'next/link';
-import { ArrowLeft, Cpu, Wifi, Globe, Radio, Zap } from 'lucide-react';
+import { ArrowLeft, Wifi, Globe, Radio, Zap, Power } from 'lucide-react';
 
 export default function SetupPage() {
   const t = useTranslations('setup');
@@ -12,12 +12,11 @@ export default function SetupPage() {
   const locale = useLocale();
 
   const steps = [
-    { icon: <Zap size={20} />, title: t('step1Title'), desc: t('step1Desc') },
-    { icon: <Cpu size={20} />, title: t('step2Title'), desc: t('step2Desc') },
-    { icon: <Wifi size={20} />, title: t('step3Title'), desc: t('step3Desc') },
-    { icon: <Globe size={20} />, title: t('step4Title'), desc: t('step4Desc') },
-    { icon: <Globe size={20} />, title: t('step5Title'), desc: t('step5Desc') },
-    { icon: <Radio size={20} />, title: t('step6Title'), desc: t('step6Desc') },
+    { icon: <Power size={20} />, title: t('step1Title'), desc: t('step1Desc') },
+    { icon: <Wifi size={20} />, title: t('step2Title'), desc: t('step2Desc') },
+    { icon: <Globe size={20} />, title: t('step3Title'), desc: t('step3Desc') },
+    { icon: <Zap size={20} />, title: t('step4Title'), desc: t('step4Desc') },
+    { icon: <Radio size={20} />, title: t('step5Title'), desc: t('step5Desc') },
   ];
 
   return (
@@ -51,17 +50,6 @@ export default function SetupPage() {
           ))}
         </div>
 
-        {/* Pinout */}
-        <div className="bg-luxa-bg-card border border-luxa-border rounded-xl p-5">
-          <h2 className="text-lg font-semibold text-luxa-text mb-4">{t('pinout')}</h2>
-          <div className="space-y-2 font-mono text-xs">
-            <PinRow label={t('pinCC1101')} />
-            <PinRow label={t('pinMotor')} />
-            <PinRow label={t('pinEndstop')} />
-            <PinRow label={t('pinLED')} />
-          </div>
-        </div>
-
         <div className="flex justify-between text-sm">
           <Link href={`/${locale}/firmware`} className="text-luxa-gold hover:underline">← {tNav('firmware')}</Link>
           <Link href={`/${locale}/dashboard`} className="text-luxa-gold hover:underline">{tNav('dashboard')} →</Link>
@@ -71,10 +59,3 @@ export default function SetupPage() {
   );
 }
 
-function PinRow({ label }: { label: string }) {
-  return (
-    <div className="p-2 bg-luxa-bg rounded-lg border border-luxa-border text-luxa-gold">
-      {label}
-    </div>
-  );
-}
