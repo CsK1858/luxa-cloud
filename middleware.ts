@@ -36,7 +36,8 @@ export async function middleware(request: NextRequest) {
   const isAuthPage = request.nextUrl.pathname.includes('/login') ||
                      request.nextUrl.pathname.includes('/register');
   const isDashboard = request.nextUrl.pathname.includes('/dashboard') ||
-                      request.nextUrl.pathname.includes('/devices');
+                      request.nextUrl.pathname.includes('/devices') ||
+                      request.nextUrl.pathname.includes('/profile');
 
   if (!user && isDashboard) {
     const loginUrl = new URL(`/${defaultLocale}/login`, request.url);

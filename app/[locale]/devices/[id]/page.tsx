@@ -67,7 +67,8 @@ export default function DeviceDetailPage({ params: { id, locale } }: { params: {
   const handleRemove = async () => {
     if (!device || !confirm(t('removeConfirm'))) return;
     const supabase = createClient();
-    await supabase.from('devices').update({ user_id: null }).eq('device_id', device.device_id);
+    // Use secure RPC function for unclaiming
+    await supabase.rpc('unclaim_device', { p_device_id: device.device_id });
     router.push(`/${currentLocale}/devices`);
   };
 

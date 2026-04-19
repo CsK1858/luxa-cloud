@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import { createClient } from '@/lib/supabase-client';
 import { LuxaLogo } from '@/components/ui/logo';
-import { LayoutDashboard, Cpu, PlusCircle, LogOut, Globe } from 'lucide-react';
+import { LayoutDashboard, Cpu, PlusCircle, LogOut, Globe, User } from 'lucide-react';
 
 export function Navbar() {
   const t = useTranslations('nav');
@@ -45,6 +45,10 @@ export function Navbar() {
           <NavLink href={`/${locale}/devices`} active={isActive('/devices')}>
             <Cpu size={18} />
             <span className="hidden sm:inline">{t('devices')}</span>
+          </NavLink>
+          <NavLink href={`/${locale}/profile`} active={isActive('/profile')}>
+            <User size={18} />
+            <span className="hidden sm:inline">{t('profile')}</span>
           </NavLink>
 
           <button

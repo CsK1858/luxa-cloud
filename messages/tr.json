@@ -142,6 +142,27 @@
     "claiming": "Ekleniyor...",
     "claimSuccess": "Cihaz başarıyla eklendi!",
     "claimFailed": "Cihaz eklenemedi. Kodu kontrol edin.",
-    "alreadyClaimed": "Bu cihaz zaten başka bir hesaba bağlı."
+    "alreadyClaimed": "Bu cihaz zaten başka bir hesaba bağlı.",
+    "alreadyYours": "Bu cihaz zaten sizin hesabınıza bağlı.",
+    "invalidQR": "Geçersiz QR kodu. Luxa cihazınızdan QR kodunu tarayın.",
+    "noBarcodeApi": "Tarayıcınız QR okumayı desteklemiyor. Lütfen kodu elle girin.",
+    "cameraError": "Kamera açılamadı. Lütfen kamera iznini kontrol edin."
+  },
+  "profile": {
+    "title": "Profil",
+    "fullName": "Ad Soyad",
+    "email": "E-posta",
+    "language": "Dil",
+    "timezone": "Saat Dilimi",
+    "security": "Güvenlik",
+    "changePassword": "Şifre Değiştir",
+    "newPassword": "Yeni şifre",
+    "confirmPassword": "Şifre tekrar",
+    "passwordChanged": "Şifre başarıyla değiştirildi.",
+    "passwordTooShort": "Şifre en az 6 karakter olmalıdır.",
+    "passwordMismatch": "Şifreler eşleşmiyor.",
+    "memberSince": "Üyelik Tarihi",
+    "connectedDevices": "Bağlı Cihazlar",
+    "saved": "Kaydedildi"
   }
 }

@@ -142,6 +142,27 @@
     "claiming": "Adding...",
     "claimSuccess": "Device added successfully!",
     "claimFailed": "Could not add device. Check the code.",
-    "alreadyClaimed": "This device is already linked to another account."
+    "alreadyClaimed": "This device is already linked to another account.",
+    "alreadyYours": "This device is already linked to your account.",
+    "invalidQR": "Invalid QR code. Scan the QR from your Luxa device.",
+    "noBarcodeApi": "Your browser doesn't support QR scanning. Please enter the code manually.",
+    "cameraError": "Could not access camera. Please check camera permissions."
+  },
+  "profile": {
+    "title": "Profile",
+    "fullName": "Full Name",
+    "email": "Email",
+    "language": "Language",
+    "timezone": "Timezone",
+    "security": "Security",
+    "changePassword": "Change Password",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm password",
+    "passwordChanged": "Password changed successfully.",
+    "passwordTooShort": "Password must be at least 6 characters.",
+    "passwordMismatch": "Passwords do not match.",
+    "memberSince": "Member Since",
+    "connectedDevices": "Connected Devices",
+    "saved": "Saved"
   }
 }

@@ -142,6 +142,27 @@
     "claiming": "Toevoegen...",
     "claimSuccess": "Apparaat succesvol toegevoegd!",
     "claimFailed": "Apparaat kon niet worden toegevoegd. Controleer de code.",
-    "alreadyClaimed": "Dit apparaat is al gekoppeld aan een ander account."
+    "alreadyClaimed": "Dit apparaat is al gekoppeld aan een ander account.",
+    "alreadyYours": "Dit apparaat is al gekoppeld aan uw account.",
+    "invalidQR": "Ongeldige QR-code. Scan de QR-code van uw Luxa-apparaat.",
+    "noBarcodeApi": "Uw browser ondersteunt geen QR-scanning. Voer de code handmatig in.",
+    "cameraError": "Kan de camera niet openen. Controleer de cameratoestemming."
+  },
+  "profile": {
+    "title": "Profiel",
+    "fullName": "Volledige naam",
+    "email": "E-mail",
+    "language": "Taal",
+    "timezone": "Tijdzone",
+    "security": "Beveiliging",
+    "changePassword": "Wachtwoord wijzigen",
+    "newPassword": "Nieuw wachtwoord",
+    "confirmPassword": "Wachtwoord bevestigen",
+    "passwordChanged": "Wachtwoord succesvol gewijzigd.",
+    "passwordTooShort": "Wachtwoord moet minimaal 6 tekens bevatten.",
+    "passwordMismatch": "Wachtwoorden komen niet overeen.",
+    "memberSince": "Lid sinds",
+    "connectedDevices": "Verbonden apparaten",
+    "saved": "Opgeslagen"
   }
 }
