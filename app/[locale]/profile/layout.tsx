@@ -1,4 +1,5 @@
 import { Navbar } from '@/components/layout/navbar';
+import { PortalNav } from '@/components/ui/portal-nav';
 
 export default function ProfileLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -7,6 +8,7 @@ export default function ProfileLayout({ children }: { children: React.ReactNode 
       <main className="max-w-5xl mx-auto px-4 py-6">
         {children}
       </main>
+      <PortalNav activeId="cloud" />
     </>
   );
 }
