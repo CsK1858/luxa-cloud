@@ -35,7 +35,9 @@
     "settings": "Einstellungen",
     "profile": "Profil",
     "firmware": "Firmware",
-    "setup": "Installationsanleitung"
+    "setup": "Installationsanleitung",
+    "alerts": "Alarme",
+    "rules": "Regeln"
   },
   "landing": {
     "hero": "Luxa Core",

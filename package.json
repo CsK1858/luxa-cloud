@@ -11,12 +11,13 @@
   "dependencies": {
     "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.47.0",
+    "lucide-react": "^0.460.0",
     "next": "^14.2.0",
     "next-intl": "^3.22.0",
+    "qrcode.react": "^4.1.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
-    "lucide-react": "^0.460.0",
-    "qrcode.react": "^4.1.0"
+    "recharts": "^3.8.1"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",

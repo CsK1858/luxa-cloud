@@ -35,7 +35,9 @@
     "settings": "Ayarlar",
     "profile": "Profil",
     "firmware": "Firmware",
-    "setup": "Kurulum"
+    "setup": "Kurulum",
+    "alerts": "Alarmlar",
+    "rules": "Kurallar"
   },
   "landing": {
     "hero": "Luxa Core",
