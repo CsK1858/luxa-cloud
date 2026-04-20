@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import { createClient } from '@/lib/supabase-client';
-import { LuxaLogo } from '@/components/ui/logo';
-import { LayoutDashboard, Cpu, PlusCircle, LogOut, Globe, User } from 'lucide-react';
+import { LuxaCloudLogo } from '@/components/ui/logo';
+import { LayoutDashboard, Cpu, LogOut, Globe, User } from 'lucide-react';
 
 export function Navbar() {
   const t = useTranslations('nav');
@@ -23,8 +23,7 @@ export function Navbar() {
 
   const switchLocale = () => {
     const newLocale = locale === 'tr' ? 'en' : 'tr';
-    const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
-    router.push(newPath);
+    router.push(pathname.replace(`/${locale}`, `/${newLocale}`));
   };
 
   const isActive = (path: string) => pathname.includes(path);
@@ -32,11 +31,13 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-luxa-bg/80 backdrop-blur-xl border-b border-luxa-border">
       <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+
+        {/* Logo: Luxa Cloud with blue branding */}
         <Link href={`/${locale}/dashboard`} className="flex items-center gap-3">
-          <LuxaLogo size={32} />
-          <span className="font-bold tracking-wider text-lg hidden sm:block">
-            <span className="text-luxa-gold">Luxa</span>{' '}
-            <span style={{ color: '#dc2626' }}>Core</span>
+          <LuxaCloudLogo size={34} />
+          <span className="font-bold tracking-wider text-lg hidden sm:flex items-baseline gap-1">
+            <span className="text-luxa-gold">Luxa</span>
+            <span style={{ color: '#0ea5e9' }}>Cloud</span>
           </span>
         </Link>
 
@@ -53,20 +54,14 @@ export function Navbar() {
             <User size={18} />
             <span className="hidden sm:inline">{t('profile')}</span>
           </NavLink>
-
-          <button
-            onClick={switchLocale}
+          <button onClick={switchLocale}
             className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm text-luxa-muted hover:text-luxa-text hover:bg-luxa-bg-hover transition"
-            title={locale === 'tr' ? 'English' : 'Türkçe'}
-          >
+            title={locale === 'tr' ? 'English' : 'Türkçe'}>
             <Globe size={18} />
             <span className="text-xs uppercase">{locale === 'tr' ? 'EN' : 'TR'}</span>
           </button>
-
-          <button
-            onClick={handleLogout}
-            className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm text-luxa-muted hover:text-luxa-error hover:bg-luxa-bg-hover transition"
-          >
+          <button onClick={handleLogout}
+            className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm text-luxa-muted hover:text-luxa-error hover:bg-luxa-bg-hover transition">
             <LogOut size={18} />
             <span className="hidden sm:inline">{tAuth('logout')}</span>
           </button>
@@ -78,14 +73,10 @@ export function Navbar() {
 
 function NavLink({ href, active, children }: { href: string; active: boolean; children: React.ReactNode }) {
   return (
-    <Link
-      href={href}
+    <Link href={href}
       className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm transition ${
-        active
-          ? 'text-luxa-gold bg-luxa-bg-hover'
-          : 'text-luxa-muted hover:text-luxa-text hover:bg-luxa-bg-hover'
-      }`}
-    >
+        active ? 'text-luxa-gold bg-luxa-bg-hover' : 'text-luxa-muted hover:text-luxa-text hover:bg-luxa-bg-hover'
+      }`}>
       {children}
     </Link>
   );

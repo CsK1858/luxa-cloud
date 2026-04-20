@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
-import { LuxaLogo } from '@/components/ui/logo';
+import { LuxaCoreLogo } from '@/components/ui/logo';
 import { LanguageSwitcher } from '@/components/ui/language-switcher';
 import { PortalNav } from '@/components/ui/portal-nav';
 import Link from 'next/link';
@@ -37,7 +37,7 @@ export default function LandingPage() {
             <a href="https://luxasystem.com" className="text-luxa-muted hover:text-luxa-text transition" title="luxasystem.com">
               <ArrowLeft size={20} />
             </a>
-            <LuxaLogo size={32} />
+            <LuxaCoreLogo size={34} />
             <LuxaCoreTitle className="font-bold tracking-wider text-lg text-luxa-gold" />
           </div>
           <div className="flex items-center gap-3">
@@ -51,9 +51,9 @@ export default function LandingPage() {
 
       {/* Hero */}
       <section className="max-w-5xl mx-auto px-4 py-20 text-center">
-        <LuxaLogo size={80} />
-        <h1 className="text-4xl sm:text-5xl font-bold text-luxa-gold mt-6 tracking-wider">
-          <LuxaCoreTitle />
+        <LuxaCoreLogo size={88} />
+        <h1 className="text-4xl sm:text-5xl font-bold mt-6 tracking-wider">
+          <LuxaCoreTitle className="text-luxa-gold" />
         </h1>
         <p className="text-lg text-luxa-muted mt-4 max-w-xl mx-auto">{t('heroSub')}</p>
         <div className="flex flex-wrap justify-center gap-3 mt-8">
@@ -76,12 +76,10 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="border-t border-luxa-border py-8 text-center text-sm text-luxa-muted">
         <p>{tCommon('appName')} &mdash; luxasystem.com</p>
       </footer>
 
-      {/* Floating Portal Nav */}
       <PortalNav activeId="core" />
     </div>
   );
