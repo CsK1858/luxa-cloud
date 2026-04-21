@@ -82,13 +82,13 @@ export function DeviceControls({ device }: Props) {
         </div>
       )}
 
-      {/* RTS Controls */}
+      {/* Kablosuz (RF) Kontroller */}
       {rtsCount > 0 && (
         <div>
           <h3 className="text-sm font-medium text-luxa-muted mb-3">{t('rtsControls')}</h3>
           {Array.from({ length: rtsCount }, (_, i) => (
             <div key={i} className="flex items-center gap-2 mb-2">
-              <span className="text-sm text-luxa-text w-20">RTS {i + 1}</span>
+              <span className="text-sm text-luxa-text w-20">Kanal {i + 1}</span>
               <ControlButton
                 icon={<ChevronUp size={18} />}
                 label={t('up')}
