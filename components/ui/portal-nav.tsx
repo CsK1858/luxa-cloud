@@ -11,7 +11,7 @@ const PORTALS = [
   { id:'home',         Icon:IC_HOME, tr:'Ana Sayfa',    de:'Startseite',   en:'Home',         path:'https://luxasystem.com',          ext:true  },
   { id:'configurator', Icon:IC_CFG,  tr:'Konfiguratör', de:'Konfigurator', en:'Configurator',  path:'https://luxasystem.com/configure', ext:true  },
   { id:'core',         Icon:IC_CORE, tr:'Luxa Core',    de:'Luxa Core',    en:'Luxa Core',     path:'/',                               ext:false },
-  { id:'control',      Icon:IC_CTRL, tr:'Kontrol',      de:'Kontrolle',    en:'Control',       path:'https://luxasystem.com/dashboard', ext:true  },
+  { id:'control',      Icon:IC_CTRL, tr:'Kontrol',      de:'Kontrolle',    en:'Control',       path:'/control',                         ext:false },
   { id:'dealer',       Icon:IC_DEAL, tr:'Bayi',         de:'Händler',      en:'Dealer',        path:'https://luxasystem.com/dealer',    ext:true  },
 ];
 
