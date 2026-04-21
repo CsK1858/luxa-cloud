@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
 import { createClient } from '@/lib/supabase-client';
 import { LuxaCloudLogo } from '@/components/ui/logo';
-import { LayoutDashboard, Cpu, LogOut, Globe, User, Bell, Zap } from 'lucide-react';
+import { LayoutDashboard, Cpu, LogOut, Globe, User, Bell, Zap, Gamepad2 } from 'lucide-react';
 
 export function Navbar() {
   const t = useTranslations('nav');
@@ -27,12 +27,13 @@ export function Navbar() {
   };
 
   const isActive = (path: string) => pathname.includes(path);
+  // Hide top navbar on /control — it has its own full-screen layout
+  if (pathname.includes('/control')) return null;
 
   return (
     <nav className="sticky top-0 z-50 bg-luxa-bg/80 backdrop-blur-xl border-b border-luxa-border">
       <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
 
-        {/* Logo: Luxa Cloud with blue branding */}
         <Link href={`/${locale}/dashboard`} className="flex items-center gap-3">
           <LuxaCloudLogo size={34} />
           <span className="font-bold tracking-wider text-lg hidden sm:flex items-baseline gap-1">
@@ -46,6 +47,16 @@ export function Navbar() {
             <LayoutDashboard size={18} />
             <span className="hidden sm:inline">{t('dashboard')}</span>
           </NavLink>
+          {/* Kontrol — prominent, gold when active */}
+          <Link href={`/${locale}/control`}
+            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition ${
+              isActive('/control')
+                ? 'text-luxa-gold bg-luxa-bg-hover ring-1 ring-luxa-gold/30'
+                : 'text-luxa-muted hover:text-luxa-gold hover:bg-luxa-bg-hover'
+            }`}>
+            <Gamepad2 size={18} />
+            <span className="hidden sm:inline">Kontrol</span>
+          </Link>
           <NavLink href={`/${locale}/devices`} active={isActive('/devices')}>
             <Cpu size={18} />
             <span className="hidden sm:inline">{t('devices')}</span>
