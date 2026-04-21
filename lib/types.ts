@@ -188,3 +188,39 @@ export type RuleAction =
   | { type: 'device_command'; target: string; command: string; }
   | { type: 'scene'; scene_id: number; }
   | { type: 'notify'; message: string; };
+
+// ─── Motor (migration 004) ────────────────────────────────────────
+export interface Motor {
+  id: string;
+  device_id: string;
+  user_id: string;
+  slot_id: number;
+  name: string;
+  room: string;
+  protocol: 'rf' | 'relay';  // rf = 433 MHz RF, relay = direct relay
+  icon: string;
+  current_pos: number;
+  created_at: string;
+}
+
+// ─── Scenario + Steps (migration 004) ────────────────────────────
+export interface Scenario {
+  id: string;
+  user_id: string;
+  name: string;
+  icon: string;
+  color: string;
+  sort_order: number;
+  created_at: string;
+  scenario_steps?: ScenarioStep[];
+}
+
+export interface ScenarioStep {
+  id: string;
+  scenario_id: string;
+  motor_id: string;
+  action: 'open' | 'close' | 'stop' | 'position';
+  target_pos: number | null;
+  delay_sec: number;
+  step_order: number;
+}
